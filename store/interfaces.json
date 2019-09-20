@@ -1,5 +1,25 @@
 {
-  "base-store-component": {
-    "component": "Example"
+  "tab-layout": {
+    "component": "TabLayout",
+    "composition": "children",
+    "allowed": "*"
+  },
+  "tab-list": {
+    "component": "TabList",
+    "composition": "children",
+    "allowed": ["tab-list.item"]
+  },
+  "tab-list.item": {
+    "component": "TabListItem"
+  },
+  "tab-content": {
+    "component": "TabContent",
+    "composition": "children",
+    "allowed": "*"
+  },
+  "tab-content.item": {
+    "component": "TabContentItem",
+    "composition": "children",
+    "allowed": "*"
   }
 }

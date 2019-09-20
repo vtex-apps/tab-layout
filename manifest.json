@@ -1,10 +1,10 @@
 {
   "vendor": "vtex",
-  "name": "base-store-component",
+  "name": "tab-layout",
   "version": "0.0.1",
-  "title": "IO Base Component",
-  "description": "IO Base component",
-  "defaultLocale": "pt-BR",
+  "title": "Tab Layout",
+  "description": "",
+  "defaultLocale": "en-US",
   "builders": {
     "messages": "1.x",
     "store": "0.x",
@@ -16,5 +16,6 @@
   },
   "dependencies": {
     "vtex.styleguide": "9.x"
-  }
+  },
+  "$schema": "https://raw.githubusercontent.com/vtex/node-vtex-api/master/gen/manifest.schema"
 }
