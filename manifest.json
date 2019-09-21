@@ -6,6 +6,7 @@
   "description": "",
   "defaultLocale": "en-US",
   "builders": {
+    "docs": "0.x",
     "messages": "1.x",
     "store": "0.x",
     "react": "3.x"
