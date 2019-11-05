@@ -17,5 +17,6 @@
     "eslint-config-vtex-react": "4.1.0",
     "vtex.render-runtime": "http://vtex.vteximg.com.br/_v/public/typings/v1/vtex.render-runtime@8.65.0/public/_types/react",
     "vtex.styleguide": "http://vtex.vteximg.com.br/_v/public/typings/v1/vtex.styleguide@9.79.4/public/_types/react"
-  }
+  },
+  "version": "0.0.2"
 }
