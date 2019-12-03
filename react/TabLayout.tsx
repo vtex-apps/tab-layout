@@ -6,7 +6,7 @@ import {
   TabLayoutContextProvider
 } from './components/TabLayoutContext'
 
-const CSS_HANDLES = ['container']
+const CSS_HANDLES = ['container'] as const
 
 interface Props {
   defaultActiveTabId?: string

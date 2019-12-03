@@ -2,7 +2,7 @@ import React from 'react'
 import { defineMessages } from 'react-intl'
 import { useCssHandles } from 'vtex.css-handles'
 
-const CSS_HANDLES = ['contentContainer']
+const CSS_HANDLES = ['contentContainer'] as const
 
 const TabContent: StorefrontFunctionComponent = props => {
   const { children } = props

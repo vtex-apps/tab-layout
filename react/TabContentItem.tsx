@@ -6,7 +6,7 @@ import {
   useTabState
 } from './components/TabLayoutContext'
 
-const CSS_HANDLES = ['contentItem']
+const CSS_HANDLES = ['contentItem'] as const
 
 interface Props {
   tabId: string

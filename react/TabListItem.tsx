@@ -9,7 +9,7 @@ import {
   useTabDispatch
 } from './components/TabLayoutContext'
 
-const CSS_HANDLES = ['listItem']
+const CSS_HANDLES = ['listItem'] as const
 
 interface Props {
   tabId: string
