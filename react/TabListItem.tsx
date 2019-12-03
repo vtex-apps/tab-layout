@@ -34,7 +34,7 @@ const TabListItem: StorefrontFunctionComponent<Props> = props => {
     }
   }, [])
 
-  const isActive = activeTab === tabId || position === 0
+  const isActive = activeTab === tabId || (!activeTab && position === 0)
 
   return (
     <div className={`${handles.listItem} ph2 pv2 ma2`}>

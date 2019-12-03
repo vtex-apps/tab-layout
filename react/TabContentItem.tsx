@@ -18,7 +18,7 @@ const TabContentItem: StorefrontFunctionComponent<Props> = props => {
   const handles = useCssHandles(CSS_HANDLES)
   const { activeTab } = useTabState()
 
-  const shouldShow = activeTab === tabId || position === 0
+  const shouldShow = activeTab === tabId || (!activeTab && position === 0)
 
   if (!shouldShow) return null
 
