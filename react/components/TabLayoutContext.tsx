@@ -21,23 +21,25 @@ const TabLayoutStateContext = React.createContext<TabLayoutContextProps>(initial
 const TabLayoutDispatchContext = React.createContext<Dispatch | undefined>(undefined)
 
 function reducer(state: TabLayoutContextProps, action: ChangeActiveTabAction): TabLayoutContextProps {
-    switch (action.type) {
-        case 'changeActiveTab':
-            if (action.payload.newActiveTab === state.activeTab) return state
-            return {
-                ...state,
-                activeTab: action.payload.newActiveTab
-            }
-        default:
-            return state
-    }
+  switch (action.type) {
+    case 'changeActiveTab':
+      if (action.payload.newActiveTab === state.activeTab) {
+        return state
+      }
+      return {
+        ...state,
+        activeTab: action.payload.newActiveTab
+      }
+    default:
+      return state
+  }
 }
 
 const TabLayoutContextProvider: FunctionComponent<
   TabLayoutContextProps
-> = ({ children }) => {
+> = ({ children, activeTab }) => {
   const [state, dispatch] = useReducer(reducer, {
-      activeTab: ""
+    activeTab,
   })
   return (
     <TabLayoutStateContext.Provider value={state}>

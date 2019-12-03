@@ -1,18 +1,16 @@
 import React from 'react'
 import { defineMessages } from 'react-intl'
+import { useCssHandles } from 'vtex.css-handles'
 
-import { generateBlockClass, BlockClass } from '@vtex/css-handles'
+const CSS_HANDLES = ['contentContainer']
 
-import styles from './components/TabLayout.css'
-
-const TabContent: StorefrontFunctionComponent<BlockClass> = props => {
-  const { blockClass, children } = props
-
-  const baseClassNames = generateBlockClass(styles.contentContainer, blockClass)
+const TabContent: StorefrontFunctionComponent = props => {
+  const { children } = props
+  const handles = useCssHandles(CSS_HANDLES)
 
   return (
-    <div className={`${baseClassNames} w-100`}>
-      {children}
+    <div className={`${handles.contentContainer} w-100`}>
+      {React.Children.map(children, (child, index) => React.cloneElement(child as any, { position: index }))}
     </div>
   )
 }

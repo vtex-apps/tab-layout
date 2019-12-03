@@ -1,39 +1,48 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import { defineMessages } from 'react-intl'
 
 import { Button } from 'vtex.styleguide'
-import { generateBlockClass, BlockClass } from '@vtex/css-handles'
+import { useCssHandles } from 'vtex.css-handles'
+
 import {
   useTabState,
   useTabDispatch
 } from './components/TabLayoutContext'
 
-import styles from './components/TabLayout.css'
+const CSS_HANDLES = ['listItem']
 
 interface Props {
-    tabId: string
-    label: string
-    defaultActiveTab: boolean
+  tabId: string
+  label: string
+  defaultActiveTab: boolean //deprecated
+  position: number
 }
 
-const TabListItem: StorefrontFunctionComponent<Props & BlockClass> = props => {
-  const { blockClass, tabId, label, defaultActiveTab = false } = props
+const TabListItem: StorefrontFunctionComponent<Props> = props => {
+  const { tabId, label, defaultActiveTab, position } = props
+  const handles = useCssHandles(CSS_HANDLES)
   const { activeTab } = useTabState()
   const dispatch = useTabDispatch()
-  const baseClassNames = generateBlockClass(styles.listItem, blockClass)
 
-  if (defaultActiveTab && activeTab === "") dispatch({
-    type: 'changeActiveTab',
+  useEffect(() => {
+    // defaultActiveTab has been deprecated, keep this for compatibility
+    if (defaultActiveTab && activeTab === "") {
+      dispatch({
+        type: 'changeActiveTab',
         payload: { newActiveTab: tabId }
-  })
+      })
+    }
+  }, [])
+
+  const isActive = activeTab === tabId || position === 0
 
   return (
-    <div className={`${baseClassNames} ph2 pv2 ma2`}>
-      <Button variation={activeTab === tabId ? "primary" : "tertiary"} 
-      onClick={() => dispatch({
+    <div className={`${handles.listItem} ph2 pv2 ma2`}>
+      <Button variation={isActive ? "primary" : "tertiary"}
+        onClick={() => dispatch({
           type: 'changeActiveTab',
           payload: { newActiveTab: tabId }
-      })}>
+        })}>
         {label}
       </Button>
     </div>

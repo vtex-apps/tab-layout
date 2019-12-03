@@ -1,26 +1,29 @@
 import React from 'react'
 import { defineMessages } from 'react-intl'
+import { useCssHandles } from 'vtex.css-handles'
 
-import { generateBlockClass, BlockClass } from '@vtex/css-handles'
 import {
   useTabState
 } from './components/TabLayoutContext'
 
-import styles from './components/TabLayout.css'
+const CSS_HANDLES = ['contentItem']
 
 interface Props {
-    tabId: string
+  tabId: string
+  position: number
 }
 
-const TabContentItem: StorefrontFunctionComponent<Props & BlockClass> = props => {
-  const { blockClass, tabId, children } = props
+const TabContentItem: StorefrontFunctionComponent<Props> = props => {
+  const { tabId, children, position } = props
+  const handles = useCssHandles(CSS_HANDLES)
   const { activeTab } = useTabState()
-  const baseClassNames = generateBlockClass(styles.contentItem, blockClass)
 
-  if (activeTab !== tabId) return null
-  
+  const shouldShow = activeTab === tabId || position === 0
+
+  if (!shouldShow) return null
+
   return (
-    <div className={`${baseClassNames} w-100`}>
+    <div className={`${handles.contentItem} w-100`}>
       {children}
     </div>
   )
