@@ -1,7 +1,7 @@
 {
   "vendor": "vtex",
   "name": "tab-layout",
-  "version": "0.0.2",
+  "version": "0.1.0",
   "title": "Tab Layout",
   "description": "",
   "defaultLocale": "en-US",
