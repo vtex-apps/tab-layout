@@ -1,5 +1,4 @@
 import { FunctionComponent } from 'react'
-import { TachyonsScaleInput } from '../hooks/tachyons'
 
 declare global {
   interface StorefrontFunctionComponent<P = {}> extends FunctionComponent<P> {
@@ -15,15 +14,5 @@ declare global {
   interface StorefrontElement extends ReactElement {
     schema?: object
     getSchema?(props: P): object
-  }
-
-  interface Gap {
-    colGap: TachyonsScaleInput
-    rowGap: TachyonsScaleInput
-  }
-
-  interface Flex {
-    stretchContent: boolean
-    grow: boolean
   }
 }
