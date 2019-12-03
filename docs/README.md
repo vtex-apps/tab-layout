@@ -50,6 +50,7 @@ This props should be edited at your theme's `blocks.json`:
 
 | Prop name                  | Type                  | Description                                                                                                   | Default value |
 | -------------------------- | --------------------- | ------------------------------------------------------------------------------------------------------------- | ------------- |
+| `defaultActiveTabId`             | `String` | Set the id of the tab to be used as default tab. Should match with the value `tabId` of a `tab-list.item`. If not provided, first tab will be used as default.  | `""`   |
 | `blockClass`               | `String`              | Unique class name to be appended to block container class                                                     | `""`          |
 
 #### tab-list
@@ -65,7 +66,6 @@ This props should be edited at your theme's `blocks.json`:
 | `blockClass`             | `String`             | Unique class name to be appended to block container class                                                                  | `""`          |
 | `tabId`                 | `String`              | A `string` used to match the tab to its content item               | `undefined`   |
 | `label`             | `String` | A `string` that determines the tab's text label | `undefined`   |
-| `defaultActiveTab`             | `Boolean` | Set to `true` if this tab should be pre-selected when the page loads (only **one** tab should have this set to `true`)  | `false`   |
 
 #### tab-content
 
@@ -102,17 +102,19 @@ To use this CSS API, you must add the `styles` builder and create an app styling
 }
 ```
 
-### CSS namespaces
+### Customization
 
 Below, we describe the namespaces that are defined by `tab-layout`.
 
-| Class name | Description                |
+| CSS Handle | Description                |
 | ---------- | -------------------------- |
 | `container`  | The container of the entire tabbed layout.    |
 | `listContainer`  | The container of the list of tabs. |
 | `listItem`  | The container of an individual tab. |
 | `contentContainer`  | The container of the tab content items. |
 | `contentItem`  | The container of an individual content item. |
+
+
 
 ## Rules and recommendations
 
@@ -135,7 +137,8 @@ The following creates a `tab-layout` with two tabs labeled "Home 1" and "Home 2"
       "tab-content#home"
     ],
     "props": {
-      "blockClass": "home"
+      "blockClass": "home",
+      "defaultActiveTabId": "home1"
     }
   },
   "tab-list#home": {
@@ -184,3 +187,5 @@ The following creates a `tab-layout` with two tabs labeled "Home 1" and "Home 2"
     }
   }
 ```
+
+In order to apply CSS customizations in this and other blocks, follow the instructions given in the recipe on [Using CSS Handles for store customization](https://vtex.io/docs/recipes/style/using-css-handles-for-store-customization). 
