@@ -80,42 +80,18 @@ This props should be edited at your theme's `blocks.json`:
 | `blockClass`             | `String`             | Unique class name to be appended to block container class                                                                  | `""`          |
 | `tabId`                 | `String`              | A `string` used to match the content item to its tab               | `undefined`   |
 
-## Styles API
-
-This app provides some CSS classes as an API for style customization.
-
-To use this CSS API, you must add the `styles` builder and create an app styling CSS file.
-
-1. Add the `styles` builder to your `manifest.json`:
-
-```json
-"builders": {
-  "styles": "1.x"
-}
-```
-
-2. Create a file called `vtex.tab-layout.css` inside the `styles/css` folder. Add your custom styles:
-
-```css
-.container {
-  margin-top: 10px;
-}
-```
-
 ### Customization
 
-Below, we describe the namespaces that are defined by `tab-layout`.
+In order to apply CSS customizations in this and other blocks, follow the instructions given in the recipe on [Using CSS Handles for store customization](https://vtex.io/docs/recipes/style/using-css-handles-for-store-customization).
 
-| CSS Handle | Description                |
-| ---------- | -------------------------- |
-| `container`  | The container of the entire tabbed layout.    |
-| `listContainer`  | The container of the list of tabs. |
-| `listItem`  | The container of an individual tab. |
-| `listItemActive`  | The container of the active tab. |
-| `contentContainer`  | The container of the tab content items. |
-| `contentItem`  | The container of an individual content item. |
-
-
+| CSS Handle |
+| ---------- |
+| `container`  |
+| `listContainer`  |
+| `listItem`  |
+| `listItemActive`  |
+| `contentContainer`  |
+| `contentItem`  |
 
 ## Rules and recommendations
 
