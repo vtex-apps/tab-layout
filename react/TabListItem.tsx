@@ -9,7 +9,7 @@ import {
   useTabDispatch
 } from './components/TabLayoutContext'
 
-const CSS_HANDLES = ['listItem'] as const
+const CSS_HANDLES = ['listItem', 'listItemActive'] as const
 
 interface Props {
   tabId: string
@@ -37,7 +37,7 @@ const TabListItem: StorefrontFunctionComponent<Props> = props => {
   const isActive = activeTab === tabId || (!activeTab && position === 0)
 
   return (
-    <div className={`${handles.listItem} ph2 pv2 ma2`}>
+    <div className={`${handles.listItem} ${isActive ? handles.listItemActive : ''} ph2 pv2 ma2`}>
       <Button variation={isActive ? "primary" : "tertiary"}
         onClick={() => dispatch({
           type: 'changeActiveTab',

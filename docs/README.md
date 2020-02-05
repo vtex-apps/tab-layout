@@ -34,11 +34,11 @@ Since `tab-layout` should be widely used to achieve different layouts, its inter
 }
 ```
 
-Notice that you could use _any_ array of blocks as `children` of `tab-layout`, given that they are allowed by the `block` that is directly above it. However, `tab-list` and `tab-content` must exist somewhere within `tab-layout` for the tab interface to function. 
+Notice that you could use _any_ array of blocks as `children` of `tab-layout`, given that they are allowed by the `block` that is directly above it. However, `tab-list` and `tab-content` must exist somewhere within `tab-layout` for the tab interface to function.
 
 Only `tab-list.item`s may exist inside `tab-list`, as those represent the actual tabs that users will interact with. Each tab should be given a `tabId` prop with a value that matches the `tabId` of a `tab-content.item` block.
 
-Despite apparently allowing any block as its children, `tab-content` must **only** contain an array of `tab-content.item`s as its children. 
+Despite apparently allowing any block as its children, `tab-content` must **only** contain an array of `tab-content.item`s as its children.
 
 A `tab-content.item` can contain any array of blocks as its children, given that they are allowed by the parent of `tab-content` (or `tab-layout` as the case may be). Each tab content item should be given a `tabId` prop with a value that matches the `tabId` of a `tab-list.item` block.
 
@@ -80,46 +80,23 @@ This props should be edited at your theme's `blocks.json`:
 | `blockClass`             | `String`             | Unique class name to be appended to block container class                                                                  | `""`          |
 | `tabId`                 | `String`              | A `string` used to match the content item to its tab               | `undefined`   |
 
-## Styles API
-
-This app provides some CSS classes as an API for style customization.
-
-To use this CSS API, you must add the `styles` builder and create an app styling CSS file.
-
-1. Add the `styles` builder to your `manifest.json`:
-
-```json
-"builders": {
-  "styles": "1.x"
-}
-```
-
-2. Create a file called `vtex.tab-layout.css` inside the `styles/css` folder. Add your custom styles:
-
-```css
-.container {
-  margin-top: 10px;
-}
-```
-
 ### Customization
 
-Below, we describe the namespaces that are defined by `tab-layout`.
+In order to apply CSS customizations in this and other blocks, follow the instructions given in the recipe on [Using CSS Handles for store customization](https://vtex.io/docs/recipes/style/using-css-handles-for-store-customization).
 
-| CSS Handle | Description                |
-| ---------- | -------------------------- |
-| `container`  | The container of the entire tabbed layout.    |
-| `listContainer`  | The container of the list of tabs. |
-| `listItem`  | The container of an individual tab. |
-| `contentContainer`  | The container of the tab content items. |
-| `contentItem`  | The container of an individual content item. |
-
-
+| CSS Handle |
+| ---------- |
+| `container`  |
+| `listContainer`  |
+| `listItem`  |
+| `listItemActive`  |
+| `contentContainer`  |
+| `contentItem`  |
 
 ## Rules and recommendations
 
-- Ensure that only **one** `tab-list.item` is given a `defaultActiveTab` prop of `true`. 
-- Ensure that the `tabId` of each `tab-list.item`/`tab-content.item` pair matches exactly. 
+- Ensure that only **one** `tab-list.item` is given a `defaultActiveTab` prop of `true`.
+- Ensure that the `tabId` of each `tab-list.item`/`tab-content.item` pair matches exactly.
 
 ## Example usage
 
@@ -188,4 +165,4 @@ The following creates a `tab-layout` with two tabs labeled "Home 1" and "Home 2"
   }
 ```
 
-In order to apply CSS customizations in this and other blocks, follow the instructions given in the recipe on [Using CSS Handles for store customization](https://vtex.io/docs/recipes/style/using-css-handles-for-store-customization). 
+In order to apply CSS customizations in this and other blocks, follow the instructions given in the recipe on [Using CSS Handles for store customization](https://vtex.io/docs/recipes/style/using-css-handles-for-store-customization).
