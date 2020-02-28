@@ -4,6 +4,7 @@
   "admin/editor.tabList.title": "admin/editor.tabList.title",
   "admin/editor.tabList.description": "admin/editor.tabList.description",
   "admin/editor.tabListItem.title": "admin/editor.tabListItem.title",
+  "admin/editor.tabListItem.label": "Tab label",
   "admin/editor.tabListItem.description": "admin/editor.tabListItem.description",
   "admin/editor.tabContent.title": "admin/editor.tabContent.title",
   "admin/editor.tabContent.description": "admin/editor.tabContent.description",

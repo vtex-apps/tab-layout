@@ -10,7 +10,10 @@
     "allowed": ["tab-list.item"]
   },
   "tab-list.item": {
-    "component": "TabListItem"
+    "component": "TabListItem",
+    "content": {
+      "$ref": "app:vtex.tab-layout#/definitions/TabListItem"
+    }
   },
   "tab-content": {
     "component": "TabContent",
