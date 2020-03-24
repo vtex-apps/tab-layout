@@ -67,6 +67,7 @@ This props should be edited at your theme's `blocks.json`:
 | `blockClass`             | `String`             | Unique class name to be appended to block container class                                                                  | `""`          |
 | `tabId`                 | `String`              | A `string` used to match the tab to its content item               | `undefined`   |
 | `label`             | `String` | A `string` that determines the tab's text label | `undefined`   |
+ `imgUrl`             | `String` | A `string` that shows in the place of the label an image | `undefined`   |
 
 #### tab-content
 

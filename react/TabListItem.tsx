@@ -14,12 +14,13 @@ const CSS_HANDLES = ['listItem', 'listItemActive'] as const
 interface Props {
   tabId: string
   label: string
+  imgUrl: string
   defaultActiveTab: boolean //deprecated
   position: number
 }
 
 const TabListItem: StorefrontFunctionComponent<Props> = props => {
-  const { tabId, label, defaultActiveTab, position } = props
+  const { tabId, imgUrl, label, defaultActiveTab, position } = props
   const handles = useCssHandles(CSS_HANDLES)
   const { activeTab } = useTabState()
   const dispatch = useTabDispatch()
@@ -43,7 +44,7 @@ const TabListItem: StorefrontFunctionComponent<Props> = props => {
           type: 'changeActiveTab',
           payload: { newActiveTab: tabId }
         })}>
-        {label}
+        {imgUrl ? <img src={imgUrl} alt={label} title={label} /> : label}
       </Button>
     </div>
   )
