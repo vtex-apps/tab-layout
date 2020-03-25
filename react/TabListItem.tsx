@@ -1,50 +1,48 @@
-import React, { useEffect } from 'react'
+import React from 'react'
 import { defineMessages } from 'react-intl'
 
 import { Button } from 'vtex.styleguide'
 import { useCssHandles } from 'vtex.css-handles'
 
-import {
-  useTabState,
-  useTabDispatch
-} from './components/TabLayoutContext'
+import { useTabState, useTabDispatch } from './components/TabLayoutContext'
+import { useDeprecatedDefaultActiveTab } from './modules/useDeprecatedDefaultActiveTab'
 
 const CSS_HANDLES = ['listItem', 'listItemActive'] as const
 
 interface Props {
   tabId: string
   label: string
-  imgUrl: string
   defaultActiveTab: boolean //deprecated
   position: number
 }
 
 const TabListItem: StorefrontFunctionComponent<Props> = props => {
-  const { tabId, imgUrl, label, defaultActiveTab, position } = props
+  const { tabId, label, defaultActiveTab, position } = props
   const handles = useCssHandles(CSS_HANDLES)
   const { activeTab } = useTabState()
   const dispatch = useTabDispatch()
 
-  useEffect(() => {
-    // defaultActiveTab has been deprecated, keep this for compatibility
-    if (defaultActiveTab && activeTab === "") {
-      dispatch({
-        type: 'changeActiveTab',
-        payload: { newActiveTab: tabId }
-      })
-    }
-  }, [])
+  useDeprecatedDefaultActiveTab(defaultActiveTab, tabId)
 
   const isActive = activeTab === tabId || (!activeTab && position === 0)
 
+  const handleClick = () =>
+    dispatch({
+      type: 'changeActiveTab',
+      payload: { newActiveTab: tabId },
+    })
+
   return (
-    <div className={`${handles.listItem} ${isActive ? handles.listItemActive : ''} ph2 pv2 ma2`}>
-      <Button variation={isActive ? "primary" : "tertiary"}
-        onClick={() => dispatch({
-          type: 'changeActiveTab',
-          payload: { newActiveTab: tabId }
-        })}>
-        {imgUrl ? <img src={imgUrl} alt={label} title={label} /> : label}
+    <div
+      className={`${handles.listItem} ${
+        isActive ? handles.listItemActive : ''
+      } ph2 pv2 ma2`}
+    >
+      <Button
+        variation={isActive ? 'primary' : 'tertiary'}
+        onClick={handleClick}
+      >
+        {label}
       </Button>
     </div>
   )

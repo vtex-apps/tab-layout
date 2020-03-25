@@ -7,7 +7,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 
 ## [Unreleased]
 ### Added
-- Accept image in the place of the `label`.
+- New block `tab-list.item.children`.
 
 ## [0.3.0] - 2020-02-28
 ### Added

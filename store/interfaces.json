@@ -15,6 +15,10 @@
       "$ref": "app:vtex.tab-layout#/definitions/TabListItem"
     }
   },
+  "tab-list.item.children": {
+    "component": "TabListItemChildren",
+    "composition": "children"
+  },
   "tab-content": {
     "component": "TabContent",
     "composition": "children",
