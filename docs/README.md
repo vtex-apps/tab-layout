@@ -23,6 +23,9 @@ Since `tab-layout` should be widely used to achieve different layouts, its inter
 "tab-list.item": {
   "component": "TabListItem"
 },
+"tab-list.item.children": {
+  "component": "TabListItemChildren"
+},
 "tab-content": {
   "component": "TabContent",
   "composition": "children",
@@ -38,6 +41,8 @@ Since `tab-layout` should be widely used to achieve different layouts, its inter
 Notice that you could use _any_ array of blocks as `children` of `tab-layout`, given that they are allowed by the `block` that is directly above it. However, `tab-list` and `tab-content` must exist somewhere within `tab-layout` for the tab interface to function.
 
 Only `tab-list.item`s may exist inside `tab-list`, as those represent the actual tabs that users will interact with. Each tab should be given a `tabId` prop with a value that matches the `tabId` of a `tab-content.item` block.
+
+You can also use `tab-list.item.children` which is a flexible alternative to `tab-list.item` which accepts any array of blocks as its children.
 
 Despite apparently allowing any block as its children, `tab-content` must **only** contain an array of `tab-content.item`s as its children.
 
@@ -68,6 +73,12 @@ This props should be edited at your theme's `blocks.json`:
 | `tabId`                 | `String`              | A `string` used to match the tab to its content item               | `undefined`   |
 | `label`             | `String` | A `string` that determines the tab's text label | `undefined`   |
 
+#### tab-list.item.children
+
+| `blockClass`             | `String`             | Unique class name to be appended to block container class                                                                  | `""`          |
+| `tabId`                 | `String`              | A `string` used to match the tab to its content item               | `undefined`   |
+
+
 #### tab-content
 
 | Prop name                  | Type                  | Description                                                                                                   | Default value |
@@ -91,6 +102,8 @@ In order to apply CSS customizations in this and other blocks, follow the instru
 | `listContainer`  |
 | `listItem`  |
 | `listItemActive`  |
+| `listItemChildren` |
+| `listItemChildrenActive` |
 | `contentContainer`  |
 | `contentItem`  |
 
