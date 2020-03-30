@@ -3,7 +3,7 @@
 # Tab Layout
 
 <!-- ALL-CONTRIBUTORS-BADGE:START - Do not remove or modify this section -->
-[![All Contributors](https://img.shields.io/badge/all_contributors-1-orange.svg?style=flat-square)](#contributors-)
+[![All Contributors](https://img.shields.io/badge/all_contributors-2-orange.svg?style=flat-square)](#contributors-)
 <!-- ALL-CONTRIBUTORS-BADGE:END -->
 
 Tab-layout is a layout structuring paradigm built within VTEX IO store framework to allow the construction of custom tabbed layouts. This paradigm uses the concept of a tab list containing tab list items (the tabs) and a tab content area containing tab content items (the content panes that the tabs control) to set the desired structure and visibility of components in a given page.
@@ -196,6 +196,7 @@ Thanks goes to these wonderful people ([emoji key](https://allcontributors.org/d
 <table>
   <tr>
     <td align="center"><a href="https://github.com/JNussens"><img src="https://avatars0.githubusercontent.com/u/7662734?v=4" width="100px;" alt=""/><br /><sub><b>Jean Nussenzveig</b></sub></a><br /><a href="https://github.com/vtex-apps/tab-layout/commits?author=JNussens" title="Code">💻</a></td>
+    <td align="center"><a href="https://github.com/lucasayb"><img src="https://avatars2.githubusercontent.com/u/17356081?v=4" width="100px;" alt=""/><br /><sub><b>Lucas Yamamoto</b></sub></a><br /><a href="https://github.com/vtex-apps/tab-layout/commits?author=lucasayb" title="Code">💻</a></td>
   </tr>
 </table>
 
