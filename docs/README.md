@@ -21,7 +21,7 @@ The Tab Layout app provides you the needed structure to create different layouts
  }
 ```
 
-Now, you are able to use all the blocks exported by the `search-result` app. Check out the full list below:
+Now, you are able to use all the blocks exported by the `tab-layou` app. Check out the full list below:
 
 | Block name   | Description                |
 | :----------: | :------------------------: |
@@ -249,4 +249,3 @@ Thanks goes to these wonderful people:
 This project follows the [all-contributors](https://github.com/all-contributors/all-contributors) specification. Contributions of any kind welcome!
 
 <!-- DOCS-IGNORE:end -->
-
