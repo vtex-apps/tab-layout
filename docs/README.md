@@ -6,128 +6,110 @@
 [![All Contributors](https://img.shields.io/badge/all_contributors-2-orange.svg?style=flat-square)](#contributors-)
 <!-- ALL-CONTRIBUTORS-BADGE:END -->
 
-Tab-layout is a layout structuring paradigm built within VTEX IO store framework to allow the construction of custom tabbed layouts. This paradigm uses the concept of a tab list containing tab list items (the tabs) and a tab content area containing tab content items (the content panes that the tabs control) to set the desired structure and visibility of components in a given page.
+The Tab Layout app provides you the needed structure to create different layouts within the store's main one from the use of *tabs*.
 
-The `tab-layout` component provides a context for the `tab-list` and `tab-content` components to communicate with each other. A variety of layouts are possible as long as both of those are somewhere within `tab-layout`.
+![tab-layout](https://user-images.githubusercontent.com/52087100/66661201-fc70c880-ec1c-11e9-8387-3fea98f59e3c.png)
+*Example of an brazilian VTEX store with tabs (`Perfumes até 40%off`, `Presentes`, and `Best Sellers`) displaying different content for users.* 
 
-## Blocks API
+## Configuration
 
-Since `tab-layout` should be widely used to achieve different layouts, its interface is very permissive:
+1. Add the Tab Layout app to your theme's dependencies in the `manifest.json` file:
 
-```json
-"tab-layout": {
-  "component": "TabLayout",
-  "composition": "children",
-  "allowed": "*"
-},
-"tab-list": {
-  "component": "TabList",
-  "composition": "children",
-  "allowed": ["tab-list.item"]
-},
-"tab-list.item": {
-  "component": "TabListItem"
-},
-"tab-list.item.children": {
-  "component": "TabListItemChildren"
-},
-"tab-content": {
-  "component": "TabContent",
-  "composition": "children",
-  "allowed": "*"
-},
-"tab-content.item": {
-  "component": "TabContentItem",
-  "composition": "children",
-  "allowed": "*"
-}
+```diff
+ "dependencies": {
++  "vtex.tab-layout": "0.x"
+ }
 ```
 
-Notice that you could use _any_ array of blocks as `children` of `tab-layout`, given that they are allowed by the `block` that is directly above it. However, `tab-list` and `tab-content` must exist somewhere within `tab-layout` for the tab interface to function.
+Now, you are able to use all the blocks exported by the `tab-layou` app. Check out the full list below:
 
-Only `tab-list.item`s may exist inside `tab-list`, as those represent the actual tabs that users will interact with. Each tab should be given a `tabId` prop with a value that matches the `tabId` of a `tab-content.item` block.
+| Block name   | Description                |
+| :----------: | :------------------------: |
+| `tab-layout` |  ![https://img.shields.io/badge/-Mandatory-red](https://img.shields.io/badge/-Mandatory-red) Parent block that merely defines the logic (via its children blocks) for the layout structure, declaring the desired list of tabs and its content. |
+| `tab-list`   |  ![https://img.shields.io/badge/-Mandatory-red](https://img.shields.io/badge/-Mandatory-red) Defines the list of tabs to be rendered. It only accepts the `tab-list.item` block as child. | 
+| `tab-list.item` | ![https://img.shields.io/badge/-Mandatory-red](https://img.shields.io/badge/-Mandatory-red) Defines the rendering for a given tab. Notice that it does not define the tab content, which is handled by the `tab-content.item` block.  |
+| `tab-list.item.children` | Flexible alternative to `tab-list.item`. Defines the rendering for a given tab and also accepts any array of blocks as its children. |
+| `tab-content` |  ![https://img.shields.io/badge/-Mandatory-red](https://img.shields.io/badge/-Mandatory-red) Defines the list of content to be rendered in each tab. It only accepts the `tab-content.item` block as child. |
+| `tab-content.item` |  ![https://img.shields.io/badge/-Mandatory-red](https://img.shields.io/badge/-Mandatory-red) Defines the content for a given tab. | 
 
-You can also use `tab-list.item.children` which is a flexible alternative to `tab-list.item` which accepts any array of blocks as its children.
-
-Despite apparently allowing any block as its children, `tab-content` must **only** contain an array of `tab-content.item`s as its children.
-
-A `tab-content.item` can contain any array of blocks as its children, given that they are allowed by the parent of `tab-content` (or `tab-layout` as the case may be). Each tab content item should be given a `tabId` prop with a value that matches the `tabId` of a `tab-list.item` block.
-
-### Configuration
-
-This props should be edited at your theme's `blocks.json`:
-
-#### tab-layout
-
-| Prop name                  | Type                  | Description                                                                                                   | Default value |
-| -------------------------- | --------------------- | ------------------------------------------------------------------------------------------------------------- | ------------- |
-| `defaultActiveTabId`             | `String` | Set the id of the tab to be used as default tab. Should match with the value `tabId` of a `tab-list.item`. If not provided, first tab will be used as default.  | `""`   |
-| `blockClass`               | `String`              | Unique class name to be appended to block container class                                                     | `""`          |
-
-#### tab-list
-
-| Prop name                  | Type                  | Description                                                                                                   | Default value |
-| -------------------------- | --------------------- | ------------------------------------------------------------------------------------------------------------- | ------------- |
-| `blockClass`               | `String`              | Unique class name to be appended to block container class                                                     | `""`          |
-
-#### tab-list.item
-
-| Prop name                | Type                 | Description                                                                                                                | Default value |
-| ------------------------ | -------------------- | -------------------------------------------------------------------------------------------------------------------------- | ------------- |
-| `blockClass`             | `String`             | Unique class name to be appended to block container class                                                                  | `""`          |
-| `tabId`                 | `String`              | A `string` used to match the tab to its content item               | `undefined`   |
-| `label`             | `String` | A `string` that determines the tab's text label | `undefined`   |
-
-#### tab-list.item.children
-
-| `blockClass`             | `String`             | Unique class name to be appended to block container class                                                                  | `""`          |
-| `tabId`                 | `String`              | A `string` used to match the tab to its content item               | `undefined`   |
-
-
-#### tab-content
-
-| Prop name                  | Type                  | Description                                                                                                   | Default value |
-| -------------------------- | --------------------- | ------------------------------------------------------------------------------------------------------------- | ------------- |
-| `blockClass`               | `String`              | Unique class name to be appended to block container class                                                     | `""`          |
-
-#### tab-content.item
-
-| Prop name                | Type                 | Description                                                                                                                | Default value |
-| ------------------------ | -------------------- | -------------------------------------------------------------------------------------------------------------------------- | ------------- |
-| `blockClass`             | `String`             | Unique class name to be appended to block container class                                                                  | `""`          |
-| `tabId`                 | `String`              | A `string` used to match the content item to its tab               | `undefined`   |
-
-### Customization
-
-In order to apply CSS customizations in this and other blocks, follow the instructions given in the recipe on [Using CSS Handles for store customization](https://vtex.io/docs/recipes/style/using-css-handles-for-store-customization).
-
-| CSS Handle |
-| ---------- |
-| `container`  |
-| `listContainer`  |
-| `listItem`  |
-| `listItemActive`  |
-| `listItemChildren` |
-| `listItemChildrenActive` |
-| `contentContainer`  |
-| `contentItem`  |
-
-## Rules and recommendations
-
-- Ensure that only **one** `tab-list.item` is given a `defaultActiveTab` prop of `true`.
-- Ensure that the `tabId` of each `tab-list.item`/`tab-content.item` pair matches exactly.
-
-## Example usage
-
-The following creates a `tab-layout` with two tabs labeled "Home 1" and "Home 2":
+2. In the desired page tempate, such as `store.home`, add the `tab-layout` block:
 
 ```json
 "store.home": {
+  "blocks": [
+    "tab-layout#home
+  ]
+},
+```
+
+3. Declare the `tab-list` and the `tab-content` blocks as `tab-layout`'s children. Do not forget to use the `tab-layout`'s props, for example:
+
+```diff
+  "store.home": {
     "blocks": [
-      "tab-layout#home"
+      "tab-layout#home
     ]
   },
-  "tab-layout#home": {
++ "tab-layout#home": 
++   "children": [
++     "tab-list#home",
++     "tab-content#home"
++   ],
++   "props": {
++     "blockClass": "home",
++     "defaultActiveTabId": "home1"
++   }
++ },
+```  
+
+4. Add and then declare the desired `tab-list.item` blocks as `tab-list`'s children:
+
+```diff
+  "store.home": {
+    "blocks": [
+      "tab-layout#home
+    ]
+  },
+  "tab-layout#home": 
+    "children": [
+      "tab-list#home",
+      "tab-content#home"
+    ],
+    "props": {
+      "blockClass": "home",
+      "defaultActiveTabId": "home1"
+    }
+  },
++ "tab-list#home": {
++   "children": [
++     "tab-list.item#home1",
++     "tab-list.item#home2"
++   ]
++ },
++ "tab-list.item#home1": {
++   "props": {
++     "tabId": "home1",
++     "label": "Home 1",
++     "defaultActiveTab": true
++   }
++ },
++ "tab-list.item#home2": {
++   "props": {
++     "tabId": "home2",
++     "label": "Home 2"
++   }
++ },
+```
+  
+5. Add and then declare the desired `tab-content.item` blocks as `tab-content`'s children:
+
+```diff
+  "store.home": {
+    "blocks": [
+      "tab-layout#home
+    ]
+  },
+  "tab-layout#home": 
     "children": [
       "tab-list#home",
       "tab-content#home"
@@ -141,7 +123,7 @@ The following creates a `tab-layout` with two tabs labeled "Home 1" and "Home 2"
     "children": [
       "tab-list.item#home1",
       "tab-list.item#home2"
-      ]
+    ]
   },
   "tab-list.item#home1": {
     "props": {
@@ -156,39 +138,99 @@ The following creates a `tab-layout` with two tabs labeled "Home 1" and "Home 2"
       "label": "Home 2"
     }
   },
-  "tab-content#home": {
-    "children": [
-      "tab-content.item#home1",
-      "tab-content.item#home2"
-    ]
-  },
-  "tab-content.item#home1": {
-    "children": [
-      "carousel#home"
-    ],
-    "props": {
-      "tabId": "home1"
-    }
-  },
-  "tab-content.item#home2": {
-    "children": [
-      "shelf#home",
-      "info-card#home",
-      "rich-text#question",
-      "rich-text#link",
-      "newsletter"
-    ],
-    "props": {
-      "tabId": "home2"
-    }
-  }
++ "tab-content#home": {
++   "children": [
++     "tab-content.item#home1",
++     "tab-content.item#home2"
++   ]
++ },
++ "tab-content.item#home1": {
++   "children": [
++     "carousel#home"
++   ],
++   "props": {
++     "tabId": "home1"
++   }
++ },
++ "tab-content.item#home2": {
++   "children": [
++     "shelf#home",
++     "info-card#home",
++     "rich-text#question",
++     "rich-text#link",
++     "newsletter"
++   ],
++   "props": {
++     "tabId": "home2"
++   }
++ }
 ```
+
+> ⚠️ *Do not forget to also declare the `tab-content.item`'s children blocks in order to properly render the tab content.*
+
+### `tab-layout` props
+
+| Prop name      | Type         | Description                                        | Default value   |
+| :------------: | :----------: | :------------------------------------------------: | :-------------: |
+| `defaultActiveTabId` | `string` | ID of the desired tab to be rendered as the default one. If no value is provided, the first tab declared in the theme will be used as default. | `undefined` |
+| `blockClass` | `string` | Block ID of your choosing to be used in [CSS customization](https://vtex.io/docs/recipes/style/using-css-handles-for-store-customization).  | `undefined` |
+
+### `tab-list` props
+
+| Prop name      | Type         | Description                                        | Default value   |
+| :------------: | :----------: | :------------------------------------------------: | :-------------: |
+| `blockClass`   | `string`     | Block ID of your choosing to be used in [CSS customization](https://vtex.io/docs/recipes/style/using-css-handles-for-store-customization). | `undefined` |
+
+### `tab-list.item` props
+
+| Prop name      | Type         | Description                                        | Default value   |
+| :------------: | :----------: | :------------------------------------------------: | :-------------: |
+| `blockClass` | `string` | Block ID of your choosing to be used in [CSS customization](https://vtex.io/docs/recipes/style/using-css-handles-for-store-customization). | `undefined` |
+| `tabId` | `string` | Tab ID of your choosing. It will be used to match the tab to its content (defined by the `tab-content.item` block).  | `undefined` |
+| `label` | `string` | Defines the tab's text label. | `undefined` |
+
+### `tab-list.item.children` props
+
+| Prop name      | Type         | Description                                        | Default value   |
+| :------------: | :----------: | :------------------------------------------------: | :-------------: |
+| `blockClass` | `string` | Block ID of your choosing to be used in [CSS customization](https://vtex.io/docs/recipes/style/using-css-handles-for-store-customization). | `undefined` |
+| `tabId` | `string` | Tab ID of your choosing. It will be used to match the tab to a given content (defined by the `tab-content.item` block). | `undefined` |
+
+### `tab-content` props
+
+| Prop name      | Type         | Description                                        | Default value   |
+| :------------: | :----------: | :------------------------------------------------: | :-------------: |
+| `blockClass`   | `string`     | Block ID of your choosing to be used in [CSS customization](https://vtex.io/docs/recipes/style/using-css-handles-for-store-customization).  | `undefined`  |
+
+### `tab-content.item` props
+
+| Prop name      | Type         | Description                                        | Default value   |
+| :------------: | :----------: | :------------------------------------------------: | :-------------: |
+| `blockClass` | `string` | Block ID of your choosing to be used in [CSS customization](https://vtex.io/docs/recipes/style/using-css-handles-for-store-customization). | `undefined` |
+| `tabId` | `string` | Tab ID of your choosing. It will be used to match the content to a given tab (defined by the `tab-list.item` / `tab-list.item.children`  blocks). | `undefined` |
+
+> ⚠️ *Pay attention to the chosen tab ID declared in both `tab-list.item` and `tab-content.item` blocks, once it is the key to link a given tab to its content.
+
+## Customization
 
 In order to apply CSS customizations in this and other blocks, follow the instructions given in the recipe on [Using CSS Handles for store customization](https://vtex.io/docs/recipes/style/using-css-handles-for-store-customization).
 
-## Contributors
+| CSS Handle |
+| ---------- |
+| `container`  |
+| `contentContainer`  |
+| `contentItem`  |
+| `listContainer`  |
+| `listItem`  |
+| `listItemActive`  |
+| `listItemChildren` |
+| `listItemChildrenActive` |
 
-Thanks goes to these wonderful people ([emoji key](https://allcontributors.org/docs/en/emoji-key)):
+<!-- DOCS-IGNORE:start -->
+
+## Contributors ✨
+
+Thanks goes to these wonderful people:
 
 <!-- ALL-CONTRIBUTORS-LIST:START - Do not remove or modify this section -->
 <!-- prettier-ignore-start -->
@@ -205,3 +247,5 @@ Thanks goes to these wonderful people ([emoji key](https://allcontributors.org/d
 <!-- ALL-CONTRIBUTORS-LIST:END -->
 
 This project follows the [all-contributors](https://github.com/all-contributors/all-contributors) specification. Contributions of any kind welcome!
+
+<!-- DOCS-IGNORE:end -->
