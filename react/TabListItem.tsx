@@ -32,21 +32,24 @@ const TabListItem: StorefrontFunctionComponent<Props> = props => {
       payload: { newActiveTab: tabId },
     })
 
-  return label?.length > 0 
-    ? (
-      <div
-        className={`${handles.listItem} ${
-          isActive ? handles.listItemActive : ''
-        } ph2 pv2 ma2`}
+  if (!label || label === '') {
+    return null
+  }
+
+  return (
+    <div
+      className={`${handles.listItem} ${
+        isActive ? handles.listItemActive : ''
+      } ph2 pv2 ma2`}
+    >
+      <Button
+        variation={isActive ? 'primary' : 'tertiary'}
+        onClick={handleClick}
       >
-        <Button
-          variation={isActive ? 'primary' : 'tertiary'}
-          onClick={handleClick}
-        >
-          {label}
-        </Button>
-      </div>
-    ) : null
+        {label}
+      </Button>
+    </div>
+  )
 }
 
 const messages = defineMessages({
