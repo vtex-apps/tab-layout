@@ -32,7 +32,7 @@ const TabListItem: StorefrontFunctionComponent<Props> = props => {
       payload: { newActiveTab: tabId },
     })
 
-  return label.length > 0 
+  return label?.length > 0 
     ? (
       <div
         className={`${handles.listItem} ${
