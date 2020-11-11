@@ -7,12 +7,12 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 
 ## [Unreleased]
 
-### Added
-- Adding validation when the label is empty
+### Changed
+- Do not render `tab-list.item` if label is empty.
 
 ## [0.4.1] - 2020-11-09
 ### Fixed
-- Update the app documentation
+- Update the app documentation.
 
 ## [0.4.0] - 2020-03-30
 ### Added
