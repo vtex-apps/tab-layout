@@ -12,11 +12,14 @@ const CSS_HANDLES = ['listItem', 'listItemActive'] as const
 interface Props {
   tabId: string
   label: string
-  defaultActiveTab: boolean //deprecated
+  /**
+   * @deprecated This prop should not be used
+   */
+  defaultActiveTab: boolean
   position: number
 }
 
-const TabListItem: StorefrontFunctionComponent<Props> = props => {
+function TabListItem(props: Props) {
   const { tabId, label, defaultActiveTab, position } = props
   const handles = useCssHandles(CSS_HANDLES)
   const { activeTab } = useTabState()
@@ -54,11 +57,9 @@ const TabListItem: StorefrontFunctionComponent<Props> = props => {
 
 const messages = defineMessages({
   title: {
-    defaultMessage: '',
     id: 'admin/editor.tabListItem.title',
   },
   description: {
-    defaultMessage: '',
     id: 'admin/editor.tabListItem.description',
   },
 })
