@@ -7,6 +7,8 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 
 ## [Unreleased]
 
+## [0.4.2] - 2020-11-13
+
 ### Changed
 - Do not render `tab-list.item` if label is empty.
 
