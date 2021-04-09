@@ -2,6 +2,7 @@ import React from 'react'
 import { defineMessages } from 'react-intl'
 
 import { Button } from 'vtex.styleguide'
+import { IOMessage } from 'vtex.native-types'
 import { useCssHandles } from 'vtex.css-handles'
 
 import { useTabState, useTabDispatch } from './components/TabLayoutContext'
@@ -49,7 +50,7 @@ function TabListItem(props: Props) {
         variation={isActive ? 'primary' : 'tertiary'}
         onClick={handleClick}
       >
-        {label}
+        <IOMessage id={label} />
       </Button>
     </div>
   )
