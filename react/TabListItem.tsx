@@ -50,7 +50,7 @@ function TabListItem(props: Props) {
         variation={isActive ? 'primary' : 'tertiary'}
         onClick={handleClick}
       >
-        <IOMessage  id={label} />
+        <IOMessage id={label} />
       </Button>
     </div>
   )
