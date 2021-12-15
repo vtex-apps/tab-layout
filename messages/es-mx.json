@@ -1,0 +1,13 @@
+{
+  "admin/editor.tabLayout.title": "Layout de pestañas",
+  "admin/editor.tabLayout.description": "Contenedor para estructura de layout de pestañas",
+  "admin/editor.tabList.title": "Lista de pestañas",
+  "admin/editor.tabList.description": "Contenedor para botones de pestaña",
+  "admin/editor.tabListItem.title": "Ítem de lista de pestañas",
+  "admin/editor.tabListItem.label": "Etiqueta de pestaña",
+  "admin/editor.tabListItem.description": "Botón con un tabID y etiqueta para controlar la visibilidad de un ítem de pestaña de contenido conincidente",
+  "admin/editor.tabContent.title": "Contenido de pestaña",
+  "admin/editor.tabContent.description": "Contenedor para los paneles de pestaña",
+  "admin/editor.tabContentItem.title": "Ítem de contenido de pestaña",
+  "admin/editor.tabContentItem.description": "Un área de contenido que se mostrará u ocultará dependiendo de la pestaña que esté activa"
+}
