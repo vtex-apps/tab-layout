@@ -1,4 +1,4 @@
-📢 Use this project, [contribute](https://github.com/vtex-apps/tab-layout) to it or open issues to help evolve it using [Store Discussion](https://github.com/vtex-apps/store-discussion).
+> 📢 Use this project, [contribute](https://github.com/vtex-apps/tab-layout) to it or open issues to help evolve it using [Store Discussion](https://github.com/vtex-apps/store-discussion).
 
 # Tab Layout
 
@@ -188,6 +188,7 @@ Now, you are able to use all the blocks exported by the `tab-layou` app. Check o
 | `blockClass` | `string` | Block ID of your choosing to be used in [CSS customization](https://vtex.io/docs/recipes/style/using-css-handles-for-store-customization). | `undefined` |
 | `tabId` | `string` | Tab ID of your choosing. It will be used to match the tab to its content (defined by the `tab-content.item` block).  | `undefined` |
 | `label` | `string` | Defines the tab's text label. | `undefined` |
+| `defaultActiveTab` | `boolean` | Defines the item as the default active tab. | `false` |
 
 ### `tab-list.item.children` props
 
