@@ -1,0 +1,13 @@
+{
+  "admin/editor.tabLayout.title": "เค้าโครงแท็บ",
+  "admin/editor.tabLayout.description": "Container สำหรับโครงสร้างเค้าโครงที่มีแท็บ",
+  "admin/editor.tabList.title": "รายการแท็บ",
+  "admin/editor.tabList.description": "Container สำหรับปุ่มแท็บ",
+  "admin/editor.tabListItem.title": "รายการแสดงแท็บ",
+  "admin/editor.tabListItem.label": "ป้ายแท็บ",
+  "admin/editor.tabListItem.description": "ปุ่มพร้อม tabId และป้ายที่ควบคุมการมองเห็นรายการคอนเทนต์ในแทบที่ตรงกัน",
+  "admin/editor.tabContent.title": "คอนเทนต์ในแท็บ",
+  "admin/editor.tabContent.description": "Container สำหรับหน้าต่างแท็บ",
+  "admin/editor.tabContentItem.title": "รายการคอนเทนต์ในแท็บ",
+  "admin/editor.tabContentItem.description": "บริเวณคอนเทนต์ที่จะแสดงหรือซ่อนไว้ขึ้นอยู่กับว่ากำลังใช้แท็บใดอยู่"
+}
