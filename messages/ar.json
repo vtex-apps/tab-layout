@@ -1,0 +1,13 @@
+{
+  "admin/editor.tabLayout.title": "تصمبم النوافذ",
+  "admin/editor.tabLayout.description": "حاوية بنية تخطيط متبوعة",
+  "admin/editor.tabList.title": "قائمة النافذة",
+  "admin/editor.tabList.description": "حاوية لأزرار التبويب",
+  "admin/editor.tabListItem.title": "ناقذة لائحة المنتج",
+  "admin/editor.tabListItem.label": "تسمية النافذة",
+  "admin/editor.tabListItem.description": "زر مع علامة التبويب و التسمية للتحكم في رؤية عنصر محتوى التبويب المطابق",
+  "admin/editor.tabContent.title": "محتوى النافذة",
+  "admin/editor.tabContent.description": "حاوية لأجزاء علامات التبويب",
+  "admin/editor.tabContentItem.title": "نافذة محتوى المنتج",
+  "admin/editor.tabContentItem.description": "هي منطقة محتوى سيتم عرضها أو إخفاؤها تبعاً لعلامة التبويب التي تكون نشطة عليها"
+}
