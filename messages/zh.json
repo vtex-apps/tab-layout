@@ -1,0 +1,13 @@
+{
+  "admin/editor.tabLayout.title": "選項卡佈局",
+  "admin/editor.tabLayout.description": "用於選項卡布局結構的容器",
+  "admin/editor.tabList.title": "選項卡列表",
+  "admin/editor.tabList.description": "用於選項卡按鈕容器",
+  "admin/editor.tabListItem.title": "選項卡列表項",
+  "admin/editor.tabListItem.label": "選項卡標籤",
+  "admin/editor.tabListItem.description": "帶有選項卡和標籤的按鈕，用於控制匹配的「選項卡內容項」的可見性",
+  "admin/editor.tabContent.title": "選項卡內容",
+  "admin/editor.tabContent.description": "用於選項卡窗格的容器",
+  "admin/editor.tabContentItem.title": "選項卡內容項",
+  "admin/editor.tabContentItem.description": "內容區域，將基於哪個選項卡激活與否確定顯示或隱藏"
+}
