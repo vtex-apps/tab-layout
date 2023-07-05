@@ -37,7 +37,7 @@ Now, you are able to use all the blocks exported by the `tab-layout` app. Check 
 ```json
 "store.home": {
   "blocks": [
-    "tab-layout#home
+    "tab-layout#home"
   ]
 },
 ```
@@ -47,10 +47,10 @@ Now, you are able to use all the blocks exported by the `tab-layout` app. Check 
 ```diff
   "store.home": {
     "blocks": [
-      "tab-layout#home
+      "tab-layout#home"
     ]
   },
-+ "tab-layout#home": 
++ "tab-layout#home": {
 +   "children": [
 +     "tab-list#home",
 +     "tab-content#home"
@@ -67,10 +67,10 @@ Now, you are able to use all the blocks exported by the `tab-layout` app. Check 
 ```diff
   "store.home": {
     "blocks": [
-      "tab-layout#home
+      "tab-layout#home"
     ]
   },
-  "tab-layout#home": 
+  "tab-layout#home": {
     "children": [
       "tab-list#home",
       "tab-content#home"
@@ -106,10 +106,10 @@ Now, you are able to use all the blocks exported by the `tab-layout` app. Check 
 ```diff
   "store.home": {
     "blocks": [
-      "tab-layout#home
+      "tab-layout#home"
     ]
   },
-  "tab-layout#home": 
+  "tab-layout#home": {
     "children": [
       "tab-list#home",
       "tab-content#home"
