@@ -7,6 +7,9 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 
 ## [Unreleased]
 
+### Fixed
+- Updated docs: fixed how the `tab` was been declared.
+
 ## [0.4.4] - 2022-02-24
 
 ### Fixed
