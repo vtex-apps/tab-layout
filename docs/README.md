@@ -50,7 +50,7 @@ Now, you are able to use all the blocks exported by the `tab-layout` app. Check 
       "tab-layout#home"
     ]
   },
-+ "tab-layout#home": 
++ "tab-layout#home": {
 +   "children": [
 +     "tab-list#home",
 +     "tab-content#home"
@@ -70,7 +70,7 @@ Now, you are able to use all the blocks exported by the `tab-layout` app. Check 
       "tab-layout#home"
     ]
   },
-  "tab-layout#home": 
+  "tab-layout#home": {
     "children": [
       "tab-list#home",
       "tab-content#home"
@@ -109,7 +109,7 @@ Now, you are able to use all the blocks exported by the `tab-layout` app. Check 
       "tab-layout#home"
     ]
   },
-  "tab-layout#home": 
+  "tab-layout#home": {
     "children": [
       "tab-list#home",
       "tab-content#home"
