@@ -1,0 +1,13 @@
+{
+  "admin/editor.tabLayout.title": "Layout filă",
+  "admin/editor.tabLayout.description": "Container pentru structura de layout cu file",
+  "admin/editor.tabList.title": "Listă tab-uri",
+  "admin/editor.tabList.description": "Container pentru butoanele filei",
+  "admin/editor.tabListItem.title": "Element listă filă",
+  "admin/editor.tabListItem.label": "Etichetă filă",
+  "admin/editor.tabListItem.description": "Buton cu un tabID și etichetă pentru a controla vizibilitatea unui Element cu Conținutul Filei care se potrivește",
+  "admin/editor.tabContent.title": "Conținut filă",
+  "admin/editor.tabContent.description": "Container pentru panourile filei",
+  "admin/editor.tabContentItem.title": "Element conținut filă",
+  "admin/editor.tabContentItem.description": "O zonă de conținut care va fi afișată sau ascunsă în funcție de care filă este activă"
+}
