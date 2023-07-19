@@ -1,13 +1,13 @@
 {
-  "admin/editor.tabLayout.title": "Tab Layout",
-  "admin/editor.tabLayout.description": "Container for tabbed layout structure",
-  "admin/editor.tabList.title": "Tab List",
-  "admin/editor.tabList.description": "Container for tab buttons",
-  "admin/editor.tabListItem.title": "Tab List Item",
-  "admin/editor.tabListItem.label": "Título de la pestaña",
-  "admin/editor.tabListItem.description": "Button with a tabId and label to control visibility of a matching Tab Content Item",
-  "admin/editor.tabContent.title": "Tab Content",
-  "admin/editor.tabContent.description": "Container for the tab panes",
-  "admin/editor.tabContentItem.title": "Tab Content Item",
-  "admin/editor.tabContentItem.description": "A content area which will be shown or hidden depending on which tab is active"
+  "admin/editor.tabLayout.title": "Layout de pestañas",
+  "admin/editor.tabLayout.description": "Contenedor para estructura de layout de pestañas",
+  "admin/editor.tabList.title": "Lista de pestañas",
+  "admin/editor.tabList.description": "Contenedor para botones de pestaña",
+  "admin/editor.tabListItem.title": "Ítem de lista de pestañas",
+  "admin/editor.tabListItem.label": "Etiqueta de pestaña",
+  "admin/editor.tabListItem.description": "Botón con un tabID y etiqueta para controlar la visibilidad de un ítem de pestaña de contenido conincidente",
+  "admin/editor.tabContent.title": "Contenido de pestaña",
+  "admin/editor.tabContent.description": "Contenedor para los paneles de pestaña",
+  "admin/editor.tabContentItem.title": "Ítem de contenido de pestaña",
+  "admin/editor.tabContentItem.description": "Un área de contenido que se mostrará u ocultará dependiendo de la pestaña que esté activa"
 }
