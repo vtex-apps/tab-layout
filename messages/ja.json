@@ -1,0 +1,13 @@
+{
+  "admin/editor.tabLayout.title": "タブレイアウト",
+  "admin/editor.tabLayout.description": "タブ付きレイアウト構造のコンテナ",
+  "admin/editor.tabList.title": "タブリスト",
+  "admin/editor.tabList.description": "タブボタンのコンテナ",
+  "admin/editor.tabListItem.title": "タブリスト項目",
+  "admin/editor.tabListItem.label": "タブラベル",
+  "admin/editor.tabListItem.description": "一致したタブコンテンツ項目の可視性を制御するタブ ID とラベルの付いたボタン",
+  "admin/editor.tabContent.title": "タブコンテンツ",
+  "admin/editor.tabContent.description": "タブペインのコンテナ",
+  "admin/editor.tabContentItem.title": "タブコンテンツ項目",
+  "admin/editor.tabContentItem.description": "どのタブがアクティブかによって表示または非表示されるコンテンツエリア"
+}

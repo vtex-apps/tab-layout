@@ -1,0 +1,13 @@
+{
+  "admin/editor.tabLayout.title": "탭 레이아웃",
+  "admin/editor.tabLayout.description": "탭 레이아웃 구조용 컨테이너",
+  "admin/editor.tabList.title": "탭 목록",
+  "admin/editor.tabList.description": "탭 버튼용 컨테이너",
+  "admin/editor.tabListItem.title": "탭 목록 항목",
+  "admin/editor.tabListItem.label": "탭 라벨",
+  "admin/editor.tabListItem.description": "일치하는 탭 콘텐츠 항목의 가시성을 제어하는 탭 ID 및 라벨이 있는 버튼",
+  "admin/editor.tabContent.title": "탭 콘텐츠",
+  "admin/editor.tabContent.description": "탭 창의 컨테이너",
+  "admin/editor.tabContentItem.title": "탭 콘텐츠 항목",
+  "admin/editor.tabContentItem.description": "활성 탭에 따라 표시하거나 숨길 콘텐츠 영역"
+}
