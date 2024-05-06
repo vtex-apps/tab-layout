@@ -8,8 +8,9 @@
 
 The Tab Layout app provides you the needed structure to create different layouts within the store's main one from the use of *tabs*.
 
-![tab-layout](https://user-images.githubusercontent.com/52087100/66661201-fc70c880-ec1c-11e9-8387-3fea98f59e3c.png)
-*Example of an brazilian VTEX store with tabs (`Perfumes até 40%off`, `Presentes`, and `Best Sellers`) displaying different content for users.* 
+|![tab-layout](https://user-images.githubusercontent.com/52087100/66661201-fc70c880-ec1c-11e9-8387-3fea98f59e3c.png)|
+|----|
+|Example of a storefront with tabs (`Perfumes até 40%off`, `Presentes`, and `Best Sellers`) displaying different content for users.|
 
 ## Configuration
 
@@ -28,13 +29,13 @@ Now, you are able to use all the blocks exported by the `tab-layout` app. Check 
 | Block name   | Description                |
 | :----------: | :------------------------: |
 | `tab-layout` |  ![https://img.shields.io/badge/-Mandatory-red](https://img.shields.io/badge/-Mandatory-red) Parent block that merely defines the logic (via its children blocks) for the layout structure, declaring the desired list of tabs and its content. |
-| `tab-list`   |  ![https://img.shields.io/badge/-Mandatory-red](https://img.shields.io/badge/-Mandatory-red) Defines the list of tabs to be rendered. It only accepts the `tab-list.item` block as child. | 
+| `tab-list`   |  ![https://img.shields.io/badge/-Mandatory-red](https://img.shields.io/badge/-Mandatory-red) Defines the list of tabs to be rendered. It only accepts the `tab-list.item` block as a child. | 
 | `tab-list.item` | ![https://img.shields.io/badge/-Mandatory-red](https://img.shields.io/badge/-Mandatory-red) Defines the rendering for a given tab. Notice that it does not define the tab content, which is handled by the `tab-content.item` block.  |
 | `tab-list.item.children` | Flexible alternative to `tab-list.item`. Defines the rendering for a given tab and also accepts any array of blocks as its children. |
-| `tab-content` |  ![https://img.shields.io/badge/-Mandatory-red](https://img.shields.io/badge/-Mandatory-red) Defines the list of content to be rendered in each tab. It only accepts the `tab-content.item` block as child. |
+| `tab-content` |  ![https://img.shields.io/badge/-Mandatory-red](https://img.shields.io/badge/-Mandatory-red) Defines the list of content to be rendered in each tab. It only accepts the `tab-content.item` block as a child. |
 | `tab-content.item` |  ![https://img.shields.io/badge/-Mandatory-red](https://img.shields.io/badge/-Mandatory-red) Defines the content for a given tab. | 
 
-2. In the desired page tempate, such as `store.home`, add the `tab-layout` block:
+2. In the desired page template (e.g., `store.home`), add the `tab-layout` block:
 
 ```json
 {
@@ -180,20 +181,20 @@ Now, you are able to use all the blocks exported by the `tab-layout` app. Check 
 ### `tab-layout` props
 
 | Prop name      | Type         | Description                                        | Default value   |
-| :------------: | :----------: | :------------------------------------------------: | :-------------: |
+| ------------ | ---------- | ------------------------------------------------ | ------------- |
 | `defaultActiveTabId` | `string` | ID of the desired tab to be rendered as the default one. If no value is provided, the first tab declared in the theme will be used as default. | `undefined` |
 | `blockClass` | `string` | Block ID of your choosing to be used in [CSS customization](https://vtex.io/docs/recipes/style/using-css-handles-for-store-customization).  | `undefined` |
 
 ### `tab-list` props
 
 | Prop name      | Type         | Description                                        | Default value   |
-| :------------: | :----------: | :------------------------------------------------: | :-------------: |
+| ------------ | ---------- | ------------------------------------------------ | ------------- |
 | `blockClass`   | `string`     | Block ID of your choosing to be used in [CSS customization](https://vtex.io/docs/recipes/style/using-css-handles-for-store-customization). | `undefined` |
 
 ### `tab-list.item` props
 
 | Prop name      | Type         | Description                                        | Default value   |
-| :------------: | :----------: | :------------------------------------------------: | :-------------: |
+| ------------ | ---------- | ------------------------------------------------ | ------------- |
 | `blockClass` | `string` | Block ID of your choosing to be used in [CSS customization](https://vtex.io/docs/recipes/style/using-css-handles-for-store-customization). | `undefined` |
 | `tabId` | `string` | Tab ID of your choosing. It will be used to match the tab to its content (defined by the `tab-content.item` block).  | `undefined` |
 | `label` | `string` | Defines the tab's text label. | `undefined` |
@@ -202,20 +203,20 @@ Now, you are able to use all the blocks exported by the `tab-layout` app. Check 
 ### `tab-list.item.children` props
 
 | Prop name      | Type         | Description                                        | Default value   |
-| :------------: | :----------: | :------------------------------------------------: | :-------------: |
+| ------------ | ---------- | ------------------------------------------------ | ------------- |
 | `blockClass` | `string` | Block ID of your choosing to be used in [CSS customization](https://vtex.io/docs/recipes/style/using-css-handles-for-store-customization). | `undefined` |
 | `tabId` | `string` | Tab ID of your choosing. It will be used to match the tab to a given content (defined by the `tab-content.item` block). | `undefined` |
 
 ### `tab-content` props
 
 | Prop name      | Type         | Description                                        | Default value   |
-| :------------: | :----------: | :------------------------------------------------: | :-------------: |
+| ------------ | ---------- | ------------------------------------------------ | ------------- |
 | `blockClass`   | `string`     | Block ID of your choosing to be used in [CSS customization](https://vtex.io/docs/recipes/style/using-css-handles-for-store-customization).  | `undefined`  |
 
 ### `tab-content.item` props
 
 | Prop name      | Type         | Description                                        | Default value   |
-| :------------: | :----------: | :------------------------------------------------: | :-------------: |
+| ------------ | ---------- | ------------------------------------------------ | ------------- |
 | `blockClass` | `string` | Block ID of your choosing to be used in [CSS customization](https://vtex.io/docs/recipes/style/using-css-handles-for-store-customization). | `undefined` |
 | `tabId` | `string` | Tab ID of your choosing. It will be used to match the content to a given tab (defined by the `tab-list.item` / `tab-list.item.children`  blocks). | `undefined` |
 
