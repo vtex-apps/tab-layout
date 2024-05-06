@@ -16,9 +16,11 @@ The Tab Layout app provides you the needed structure to create different layouts
 1. Add the Tab Layout app to your theme's dependencies in the `manifest.json` file:
 
 ```diff
+{
  "dependencies": {
-+  "vtex.tab-layout": "0.x"
- }
+   "vtex.tab-layout": "0.x"
+  }
+}
 ```
 
 Now, you are able to use all the blocks exported by the `tab-layout` app. Check out the full list below:
@@ -35,42 +37,46 @@ Now, you are able to use all the blocks exported by the `tab-layout` app. Check 
 2. In the desired page tempate, such as `store.home`, add the `tab-layout` block:
 
 ```json
-"store.home": {
-  "blocks": [
-    "tab-layout#home"
-  ]
-},
+{
+  "store.home": {
+    "blocks": [
+      "tab-layout#home"
+    ]
+  },
 ```
 
 3. Declare the `tab-list` and the `tab-content` blocks as `tab-layout`'s children. Do not forget to use the `tab-layout`'s props, for example:
 
 ```diff
+{
   "store.home": {
     "blocks": [
       "tab-layout#home"
     ]
   },
-+ "tab-layout#home": 
-+   "children": [
-+     "tab-list#home",
-+     "tab-content#home"
-+   ],
-+   "props": {
-+     "blockClass": "home",
-+     "defaultActiveTabId": "home1"
-+   }
-+ },
+  "tab-layout#home": {
+    "children": [
+      "tab-list#home",
+      "tab-content#home"
+    ],
+    "props": {
+      "blockClass": "home",
+      "defaultActiveTabId": "home1"
+    }
+  }
+}
 ```  
 
 4. Add and then declare the desired `tab-list.item` blocks as `tab-list`'s children:
 
 ```diff
+{
   "store.home": {
     "blocks": [
       "tab-layout#home"
     ]
   },
-  "tab-layout#home": 
+  "tab-layout#home": {
     "children": [
       "tab-list#home",
       "tab-content#home"
@@ -80,36 +86,38 @@ Now, you are able to use all the blocks exported by the `tab-layout` app. Check 
       "defaultActiveTabId": "home1"
     }
   },
-+ "tab-list#home": {
-+   "children": [
-+     "tab-list.item#home1",
-+     "tab-list.item#home2"
-+   ]
-+ },
-+ "tab-list.item#home1": {
-+   "props": {
-+     "tabId": "home1",
-+     "label": "Home 1",
-+     "defaultActiveTab": true
-+   }
-+ },
-+ "tab-list.item#home2": {
-+   "props": {
-+     "tabId": "home2",
-+     "label": "Home 2"
-+   }
-+ },
+  "tab-list#home": {
+    "children": [
+      "tab-list.item#home1",
+      "tab-list.item#home2"
+    ]
+  },
+  "tab-list.item#home1": {
+    "props": {
+      "tabId": "home1",
+      "label": "Home 1",
+      "defaultActiveTab": true
+    }
+  },
+  "tab-list.item#home2": {
+    "props": {
+      "tabId": "home2",
+      "label": "Home 2"
+    }
+  }
+}
 ```
   
 5. Add and then declare the desired `tab-content.item` blocks as `tab-content`'s children:
 
 ```diff
+{
   "store.home": {
     "blocks": [
       "tab-layout#home"
     ]
   },
-  "tab-layout#home": 
+  "tab-layout#home": {
     "children": [
       "tab-list#home",
       "tab-content#home"
@@ -138,32 +146,33 @@ Now, you are able to use all the blocks exported by the `tab-layout` app. Check 
       "label": "Home 2"
     }
   },
-+ "tab-content#home": {
-+   "children": [
-+     "tab-content.item#home1",
-+     "tab-content.item#home2"
-+   ]
-+ },
-+ "tab-content.item#home1": {
-+   "children": [
-+     "carousel#home"
-+   ],
-+   "props": {
-+     "tabId": "home1"
-+   }
-+ },
-+ "tab-content.item#home2": {
-+   "children": [
-+     "shelf#home",
-+     "info-card#home",
-+     "rich-text#question",
-+     "rich-text#link",
-+     "newsletter"
-+   ],
-+   "props": {
-+     "tabId": "home2"
-+   }
-+ }
+  "tab-content#home": {
+    "children": [
+      "tab-content.item#home1",
+      "tab-content.item#home2"
+    ]
+  },
+  "tab-content.item#home1": {
+    "children": [
+      "carousel#home"
+    ],
+    "props": {
+      "tabId": "home1"
+    }
+  },
+  "tab-content.item#home2": {
+    "children": [
+      "shelf#home",
+      "info-card#home",
+      "rich-text#question",
+      "rich-text#link",
+      "newsletter"
+    ],
+    "props": {
+      "tabId": "home2"
+    }
+  }
+}
 ```
 
 > ⚠️ *Do not forget to also declare the `tab-content.item`'s children blocks in order to properly render the tab content.*
@@ -210,7 +219,7 @@ Now, you are able to use all the blocks exported by the `tab-layout` app. Check 
 | `blockClass` | `string` | Block ID of your choosing to be used in [CSS customization](https://vtex.io/docs/recipes/style/using-css-handles-for-store-customization). | `undefined` |
 | `tabId` | `string` | Tab ID of your choosing. It will be used to match the content to a given tab (defined by the `tab-list.item` / `tab-list.item.children`  blocks). | `undefined` |
 
-> ⚠️ *Pay attention to the chosen tab ID declared in both `tab-list.item` and `tab-content.item` blocks, once it is the key to link a given tab to its content.
+> ⚠️ *Pay attention to the chosen tab ID declared in both `tab-list.item` and `tab-content.item` blocks, once it is the key to link a given tab to its content.*
 
 ## Customization
 
