@@ -183,19 +183,19 @@ Now, you are able to use all the blocks exported by the `tab-layout` app. Check 
 | Prop name      | Type         | Description                                        | Default value   |
 | ------------ | ---------- | ------------------------------------------------ | ------------- |
 | `defaultActiveTabId` | `string` | ID of the desired tab to be rendered as the default one. If no value is provided, the first tab declared in the theme will be used as default. | `undefined` |
-| `blockClass` | `string` | Block ID of your choosing to be used in [CSS customization](https://vtex.io/docs/recipes/style/using-css-handles-for-store-customization).  | `undefined` |
+| `blockClass` | `string` | Block ID of your choosing to be used in [CSS customization](https://developers.vtex.com/docs/guides/vtex-io-documentation-using-css-handles-for-store-customization).  | `undefined` |
 
 ### `tab-list` props
 
 | Prop name      | Type         | Description                                        | Default value   |
 | ------------ | ---------- | ------------------------------------------------ | ------------- |
-| `blockClass`   | `string`     | Block ID of your choosing to be used in [CSS customization](https://vtex.io/docs/recipes/style/using-css-handles-for-store-customization). | `undefined` |
+| `blockClass`   | `string`     | Block ID of your choosing to be used in [CSS customization](https://developers.vtex.com/docs/guides/vtex-io-documentation-using-css-handles-for-store-customization). | `undefined` |
 
 ### `tab-list.item` props
 
 | Prop name      | Type         | Description                                        | Default value   |
 | ------------ | ---------- | ------------------------------------------------ | ------------- |
-| `blockClass` | `string` | Block ID of your choosing to be used in [CSS customization](https://vtex.io/docs/recipes/style/using-css-handles-for-store-customization). | `undefined` |
+| `blockClass` | `string` | Block ID of your choosing to be used in [CSS customization](https://developers.vtex.com/docs/guides/vtex-io-documentation-using-css-handles-for-store-customization). | `undefined` |
 | `tabId` | `string` | Tab ID of your choosing. It will be used to match the tab to its content (defined by the `tab-content.item` block).  | `undefined` |
 | `label` | `string` | Defines the tab's text label. | `undefined` |
 | `defaultActiveTab` | `boolean` | Defines the item as the default active tab. | `false` |
@@ -204,27 +204,27 @@ Now, you are able to use all the blocks exported by the `tab-layout` app. Check 
 
 | Prop name      | Type         | Description                                        | Default value   |
 | ------------ | ---------- | ------------------------------------------------ | ------------- |
-| `blockClass` | `string` | Block ID of your choosing to be used in [CSS customization](https://vtex.io/docs/recipes/style/using-css-handles-for-store-customization). | `undefined` |
+| `blockClass` | `string` | Block ID of your choosing to be used in [CSS customization](https://developers.vtex.com/docs/guides/vtex-io-documentation-using-css-handles-for-store-customization). | `undefined` |
 | `tabId` | `string` | Tab ID of your choosing. It will be used to match the tab to a given content (defined by the `tab-content.item` block). | `undefined` |
 
 ### `tab-content` props
 
 | Prop name      | Type         | Description                                        | Default value   |
 | ------------ | ---------- | ------------------------------------------------ | ------------- |
-| `blockClass`   | `string`     | Block ID of your choosing to be used in [CSS customization](https://vtex.io/docs/recipes/style/using-css-handles-for-store-customization).  | `undefined`  |
+| `blockClass`   | `string`     | Block ID of your choosing to be used in [CSS customization](https://developers.vtex.com/docs/guides/vtex-io-documentation-using-css-handles-for-store-customization).  | `undefined`  |
 
 ### `tab-content.item` props
 
 | Prop name      | Type         | Description                                        | Default value   |
 | ------------ | ---------- | ------------------------------------------------ | ------------- |
-| `blockClass` | `string` | Block ID of your choosing to be used in [CSS customization](https://vtex.io/docs/recipes/style/using-css-handles-for-store-customization). | `undefined` |
+| `blockClass` | `string` | Block ID of your choosing to be used in [CSS customization](https://developers.vtex.com/docs/guides/vtex-io-documentation-using-css-handles-for-store-customization). | `undefined` |
 | `tabId` | `string` | Tab ID of your choosing. It will be used to match the content to a given tab (defined by the `tab-list.item` / `tab-list.item.children`  blocks). | `undefined` |
 
 > ⚠️ Be mindful of the `tabID` specified in both `tab-list.item` and `tab-content.item` blocks, as this parameter couples a tab and its corresponding content.
 
 ## Customization
 
-In order to apply CSS customizations in this and other blocks, follow the instructions given in the recipe on [Using CSS Handles for store customization](https://vtex.io/docs/recipes/style/using-css-handles-for-store-customization).
+In order to apply CSS customizations in this and other blocks, follow the instructions given in the recipe on [Using CSS Handles for store customization](https://developers.vtex.com/docs/guides/vtex-io-documentation-using-css-handles-for-store-customization).
 
 | CSS Handle |
 | ---------- |
