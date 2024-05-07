@@ -176,7 +176,7 @@ Now, you are able to use all the blocks exported by the `tab-layout` app. Check 
 }
 ```
 
-> ⚠️ *Do not forget to also declare the `tab-content.item`'s children blocks in order to properly render the tab content.*
+> ⚠️ Make sure to declare the `tab-content.item`'s children blocks in order to properly render the tab content.
 
 ### `tab-layout` props
 
@@ -220,7 +220,7 @@ Now, you are able to use all the blocks exported by the `tab-layout` app. Check 
 | `blockClass` | `string` | Block ID of your choosing to be used in [CSS customization](https://vtex.io/docs/recipes/style/using-css-handles-for-store-customization). | `undefined` |
 | `tabId` | `string` | Tab ID of your choosing. It will be used to match the content to a given tab (defined by the `tab-list.item` / `tab-list.item.children`  blocks). | `undefined` |
 
-> ⚠️ *Pay attention to the chosen tab ID declared in both `tab-list.item` and `tab-content.item` blocks, once it is the key to link a given tab to its content.*
+> ⚠️ Be mindful of the `tabID` specified in both `tab-list.item` and `tab-content.item` blocks, as this parameter couples a tab and its corresponding content.
 
 ## Customization
 
